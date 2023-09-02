@@ -1,0 +1,124 @@
+.portfolio{
+  max-width: 1140px;
+  width: 100%;
+  margin-bottom: 85px;
+}
+
+.portfolio__title{
+  margin-top: 0;
+  margin-bottom: 50px;
+  color: #8B8B8B;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 111.111% */
+}
+
+.portfolio__title_light{
+  color: #A0A0A0;
+}
+
+.portfolio__project{
+  margin-top: 0;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #424242;
+}
+
+.portfolio__project_light{
+  border-bottom-color: #E8E8E8;
+}
+
+.project__type{
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px; /* 166.667% */
+  letter-spacing: -1.2px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.project__type_light{
+  color: #000;
+}
+
+.project__link{
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 60px; /* 200% */
+  letter-spacing: -1.2px;
+  text-decoration: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 29px;
+  height: 60px;
+  transition: opacity 300ms ease-in-out;
+}
+
+.project__link_light{
+  color: #000;
+}
+
+.project__link:hover{
+  opacity: 0.7;
+}
+
+.portfolio__project:last-of-type{
+  border-bottom: none;
+}
+
+@media all and (max-width:1279px) {
+  .portfolio{
+    max-width: 668px;
+  }
+
+  .portfolio__title{
+    color: #A0A0A0;
+  }
+
+  .portfolio__project{
+    border-bottom-color: #E6E6E6;
+  }
+
+  .project__type{
+    font-size: 28px;
+    letter-spacing: -1.12px;
+  }
+}
+
+@media all and (max-width:767px){
+  .portfolio{
+    max-width: 292px;
+    margin-bottom: 65px;
+  }
+
+  .portfolio__title{
+    font-size: 14px;
+    line-height: 20px; /* 142.857% */
+    margin-bottom: 40px;
+  }
+
+  .portfolio__project{
+    max-width: 292px;
+    padding-bottom: 19px;
+  }
+
+  .project__type{
+    font-size: 18px;
+    line-height: 28px; /* 155.556% */
+    letter-spacing: -0.72px;
+  }
+
+  .project__link{
+    width: 18px;
+    height: 28px;
+    font-size: 18px;
+    line-height: 28px; /* 155.556% */
+    letter-spacing: -0.72px;
+  }
+}

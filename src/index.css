@@ -1,0 +1,9 @@
+@import url(./vendor/normalize.css);
+@import url(./fonts/fonts.css);
+
+*{
+  font-family: 'Inter', Helvetica, sans-serif;
+  color: #fff;
+  transition-property: color background border;
+  transition: 300ms ease-in-out;
+}

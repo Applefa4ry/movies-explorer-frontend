@@ -1,0 +1,173 @@
+.about-me{
+  margin-bottom: 100px;
+}
+
+.about-me__business-card{
+  margin-top: 66px;
+  max-width: 1140px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.business-card__info{
+  width: 600px;
+}
+
+.business-card__name{
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 58px; /* 116% */
+  letter-spacing: -2px;
+}
+
+.business-card__name_light{
+  color: #000;
+}
+
+.business-card__job{
+  margin-top: 0;
+  margin-bottom: 26px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 111.111% */
+}
+
+.business-card__job_light{
+  color: #000;
+}
+
+.business-card__about{
+  margin-top: 0;
+  margin-bottom: 99px;
+  width: 599px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 157.143% */
+}
+
+.business-card__about_light{
+  color: #000;
+}
+
+.business-card__github{
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+  transition: opacity 300ms ease-in-out;
+}
+
+.business-card__github_light{
+  color: #000;
+}
+
+.business-card__github:hover{
+  opacity: 0.7;
+}
+
+.business-card__avatar{
+  width: 270px;
+  height: 327px;
+  border-radius: 10px;
+  background: url(../../images/avatar.jpg) lightgray 50% / cover no-repeat;
+}
+
+@media all and (max-width:1279px) {
+  .about-me{
+    margin-bottom: 90px;
+  }
+
+  .about-me__business-card{
+    max-width: 668px;
+  }
+
+  .business-card__info{
+    width: 364px;
+  }
+
+  .business-card__name{
+    font-size: 40px;
+    line-height: 40px; /* 100% */
+    letter-spacing: -1.6px;
+    margin-bottom: 16px;
+  }
+
+  .business-card__job{
+    font-size: 12px;
+    line-height: 18px; /* 150% */
+    margin-bottom: 20px;
+  }
+
+  .business-card__about{
+    font-size: 12px;
+    line-height: 18px; /* 150% */
+    width: 362px;
+    margin-bottom: 86px;
+  }
+
+  .business-card__avatar{
+    width: 255px;
+    height: 307px;
+  }
+
+  .business-card__github{
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+@media all and (max-width:767px){
+  .about-me{
+    margin-bottom: 70px;
+  }
+
+  .section__title_about-me{
+    max-width: 292px;
+  }
+
+  .about-me__business-card{
+    max-width: 292px;
+    margin-top: 60px;
+    flex-direction: column-reverse;
+    gap: 38px;
+  }
+
+  .business-card__avatar{
+    width: 100%;
+    height: 352px;
+  }
+
+  .business-card__info{
+    width: 100%;
+  }
+
+  .business-card__name{
+    font-size: 30px;
+    letter-spacing: -1.2px;
+    margin-bottom: 18px;
+  }
+
+  .business-card__job{
+    font-size: 11px;
+    line-height: 16px; /* 145.455% */
+  }
+
+  .business-card__about{
+    max-width: 292px;
+    font-size: 11px;
+    line-height: 16px; /* 145.455% */
+    margin-bottom: 39px;
+  }
+
+  .business-card__github{
+    position: static;
+  }
+}

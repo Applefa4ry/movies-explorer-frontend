@@ -1,0 +1,135 @@
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 6px;
+  background-color: #222;
+  filter: drop-shadow(0px 4px 30px 0px rgba(0, 0, 0, 0.08));
+  cursor: pointer;
+}
+
+.card_light{
+  background-color: #FDFDFD;
+  filter: drop-shadow(0px 16px 24px rgba(0, 0, 0, 0.05));
+}
+
+.card__image{
+  width: 100%;
+  margin-bottom: 9px;
+}
+
+.card__about{
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card__title{
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #FFF;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.card__title_light{
+  color: #000;
+}
+
+.card__like{
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: none;
+  background-image: url(../../images/heart.svg);
+  cursor: pointer;
+  transition: opacity 300ms ease-in-out;
+}
+
+.card__like:hover{
+  opacity: 0.8;
+}
+
+.card:hover .card__delete{
+  opacity: 1;
+}
+
+.card__delete{
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: none;
+  background-image: url(../../images/delete.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: opacity 300ms ease-in-out;
+  opacity: 0;
+}
+
+.card__delete:hover{
+  opacity: 0.8;
+}
+
+.card__like_active{
+  background-image: url(../../images/heart_active.svg);
+}
+
+.card__duration{
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #8B8B8B;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 16px;
+}
+
+@media all and (max-width:1279px) {
+  .card__image{
+    margin-bottom: 8px;
+  }
+
+  .card__about{
+    padding-left: 14px;
+    padding-right: 14px;
+    margin-bottom: 7px;
+  }
+
+  .card__duration{
+    margin-left: 14px;
+  }
+}
+
+@media all and (max-width:767px) {
+  .card__image{
+    margin-bottom: 7px;
+  }
+
+  .card__about{
+    padding-right: 10px;
+    margin-bottom: 7px;
+  }
+
+  .card__title{
+    font-size: 12px;
+  }
+
+  .card__duration{
+    font-size: 10px;
+  }
+}

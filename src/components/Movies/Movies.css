@@ -1,0 +1,34 @@
+.button-download-more{
+  max-width: 1140px;
+  width: 100%;
+  height: 36px;
+  color: #FFF;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 6px;
+  background-color: #2F2F2F;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 80px;
+}
+
+.button-download-more_light{
+  color: #000;
+  background-color: #F9F9F9;
+}
+
+@media all and (max-width:1279px) {
+  .button-download-more{
+    max-width: 708px;
+    margin-bottom: 114px;
+  }
+}
+
+@media all and (max-width:767px) {
+  .button-download-more{
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,138 @@
+.header{
+  position: absolute;
+  top: 0;
+  height: 74px;
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 70px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__link{
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 138.462% */
+  background: none;
+  border: none;
+  margin-left: 39px;
+  margin-right: 4px;
+  cursor: pointer;
+  transition: opacity 300ms ease-in-out;
+}
+
+.header__link:hover{
+  opacity: 0.7;
+}
+
+.header__link:nth-of-type(3){
+  margin-left: 0px;
+}
+
+
+.header__link_active{
+  font-weight: 500;
+}
+
+.header__link_light{
+  color: #000;
+}
+
+.sign__button{
+  border: none;
+  cursor: pointer;
+  margin-left: 25px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; /* 133.333% */
+  transition: opacity 300ms ease-in-out;
+}
+
+.sign__button:hover{
+  opacity: 0.8;
+}
+
+.sign__button_registration{
+  background: none;
+}
+
+.sign__button_registration_light{
+  color: #000;
+}
+
+.sign__button_login{
+  color: #000;
+  padding: 8px 20px;
+  border-radius: 3px;
+  background: #3DDC84;
+}
+
+.sign__button_login_light{
+  color: #fff;
+  background: #3456F3;
+}
+
+.header__account{
+  width: 100px;
+  height: 32px;
+  padding-left: 11px;
+  border: none;
+  border-radius: 40px;
+  background-color: #202020;
+  box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 12px; /* 92.308% */
+  background-image: url(../../images/account.svg);
+  background-repeat: no-repeat;
+  background-position: 71px 50%;
+  margin-left: auto;
+  cursor: pointer;
+  transition-property: opacity background;
+  transition: 300ms ease-in-out;
+}
+
+.header__account:hover{
+  opacity: 0.8;
+}
+
+.header__account_light{
+  background-image: url(../../images/account-light.svg);
+  background-color: #FFF;
+  color: #000;
+}
+
+.header__account_main{
+  background-color: rgba(0, 0, 0, 0.0);
+  box-shadow: none;
+}
+
+@media all and (max-width:1279px) {
+  .header{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media all and (max-width:767px) {
+  .header{
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .sign__button{
+    font-size: 10px;
+    line-height: 16px; /* 160% */
+    margin-left: 11px;
+  }
+
+  .sign__button_login{
+    padding: 5px 12px;
+  }
+}

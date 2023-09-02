@@ -1,0 +1,18 @@
+.logo{
+  background-image: url(../../images/logo.svg);
+  border: none;
+  cursor: pointer;
+  height: 38px;
+  width: 38px;
+  border-radius: 9px;
+  transition-property: opacity background;
+  transition: 300ms ease-in-out;
+}
+
+.logo:hover{
+  opacity: 0.8;
+}
+
+.logo_light{
+  background-image: url(../../images/logo-light.svg);
+}

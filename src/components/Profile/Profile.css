@@ -101,12 +101,21 @@
 
 @media all and (max-width:767px) {
   .profile__title{
+    margin-top: 106px;
     margin-bottom: 70px;
   }
 
   .profile__about{
     width: 260px;
-    margin-bottom: 358px;
+    margin-bottom: 357px;
+  }
+
+  .profile__edit-button{
+    font-size: 12px;
+  }
+
+  .profile__logout-button{
+    font-size: 12px;
   }
 }
 

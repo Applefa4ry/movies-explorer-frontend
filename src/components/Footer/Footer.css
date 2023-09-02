@@ -44,6 +44,12 @@
 .copyright__yandex{
   margin-top: 0;
   margin-right: 20px;
+  text-decoration: none;
+  transition: opacity 300ms ease-in-out;
+}
+
+.copyright__yandex:hover{
+  opacity: 0.7;
 }
 
 .copyright__yandex_light{
@@ -53,6 +59,12 @@
 .copyright__github{
   margin-top: 0;
   margin-bottom: 20px;
+  text-decoration: none;
+  transition: opacity 300ms ease-in-out;
+}
+
+.copyright__github:hover{
+  opacity: 0.7;
 }
 
 .copyright__github_light{

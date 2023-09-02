@@ -20,7 +20,7 @@ const Logo = ({handleChangeTheme}) => {
   }
 
   return (
-    <button type='button' className={`header__logo ${darkTheme?'':'header__logo_light'}`} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} />
+    <button type='button' className={`logo ${darkTheme?'':'logo_light'}`} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} />
   )
 }
 

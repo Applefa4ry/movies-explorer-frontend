@@ -23,6 +23,9 @@
 .nav-menu_open{
   background-image: url(../../images/nav-close.svg);
   transform: rotate(180deg);
+  position: fixed;
+  right: 29.16px;
+  top: 29.16px;
 }
 
 .nav-menu_light.nav-menu_open{
@@ -124,11 +127,22 @@
 }
 
 @media all and (max-width:767px) {
+  .nav-menu{
+    width: 40px;
+    height: 43px;
+    background-size: 36px 41px;
+  }
+
   .nav-menu__links{
     width: 100%;
   }
 
   .nav-menu__account{
     margin-top: 418px;
+  }
+
+  .nav-menu_open{
+    right: 20.16px;
+    top: 20.16px;
   }
 }

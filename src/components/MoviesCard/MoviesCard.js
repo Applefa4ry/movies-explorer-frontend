@@ -9,7 +9,7 @@ const MoviesCard = ({data}) => {
   const darkTheme = React.useContext(DarkThemeContext);
   return (
     <figure className={`card ${darkTheme?'':'card_light'}`}>
-      <img className='card__image' src={data.image} alt='card' />
+      <img className='card__image' src={data.image} alt={data.nameRU} />
       <figcaption className='card__about'>
         <h2 className={`card__title  ${darkTheme?'':'card__title_light'}`}>{data.nameRU}</h2>
         {location.pathname === '/movies' ? 

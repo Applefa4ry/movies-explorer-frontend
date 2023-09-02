@@ -26,9 +26,9 @@ const Portfolio = () => {
       </h2>
       {projects.map((project, index) => (
         <div key={index} className={`portfolio__project project ${darkTheme?'':'portfolio__project_light'}`}>
-          <h3 className={`project__type ${darkTheme?'':'project__type_light'}`}>
+          <Link to={project.link} target='_blank' className={`project__type ${darkTheme?'':'project__type_light'}`}>
             {project.type}
-          </h3>
+          </Link>
           <Link to={project.link} target='_blank' className={`project__link ${darkTheme?'':'project__link_light'}`}>↗</Link>
         </div>
       ))}

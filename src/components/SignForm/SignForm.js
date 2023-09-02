@@ -13,11 +13,11 @@ const SignForm = ({handleChangeTheme, hasMistake, data}) => {
       {data.inputs.map((input) => (
         <>
           <label htmlFor={input.for} className='form__label'>{input.name}</label>
-          <input id={input.for} className={`form__input ${darkTheme ? '':'form__input_light'}`} />
+          <input inLength="2" maxLength="40" required placeholder={input.name} id={input.for} className={`form__input ${darkTheme ? '':'form__input_light'}`} />
         </>
       ))}
       <label htmlFor='password' className='form__label'>Пароль</label>
-      <input id='password' type='password' className={`form__input ${darkTheme ? '':'form__input_light'}  ${hasMistake?'form__input_bad':''}`} />
+      <input id='password' inLength="8" maxLength="200" required placeholder='Пароль' type='password' className={`form__input ${darkTheme ? '':'form__input_light'}  ${hasMistake?'form__input_bad':''}`} />
       {hasMistake && <p className='form__bad'>Что-то пошло не так...</p>}
       <button type='submit' className='form__button'>{data.button}</button>
       <div className='form__nav nav'>

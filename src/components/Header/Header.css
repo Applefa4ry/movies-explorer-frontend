@@ -44,7 +44,7 @@
 .sign__button{
   border: none;
   cursor: pointer;
-  margin-left: 30px;
+  margin-left: 25px;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -106,6 +106,11 @@
   background-image: url(../../images/account-light.svg);
   background-color: #FFF;
   color: #000;
+}
+
+.header__account_main{
+  background-color: rgba(0, 0, 0, 0.0);
+  box-shadow: none;
 }
 
 @media all and (max-width:1279px) {

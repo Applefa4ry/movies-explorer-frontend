@@ -33,7 +33,8 @@
 @media all and (max-width:1279px) {
   .hero{
     height: 858px;
-    background-position: 50% 297px;
+    background-position: 50% 298px;
+    background-image: url(../../images/hero-light.svg);
   }
 
   .hero__title{

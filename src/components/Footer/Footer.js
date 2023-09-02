@@ -1,5 +1,6 @@
 import React from 'react'
 import { DarkThemeContext } from '../../context/DarkThemeContext'
+import { Link } from 'react-router-dom'
 import './Footer.css'
 
 const Footer = () => {
@@ -13,12 +14,12 @@ const Footer = () => {
         <p className={`copyright__year ${darkTheme?'':'copyright__year_light'}`}>
           © {new Date().getFullYear()}
         </p>
-        <p className={`copyright__yandex ${darkTheme?'':'copyright__yandex_light'}`}>
+        <Link to='https://practicum.yandex.ru/' target='_blank' className={`copyright__yandex ${darkTheme?'':'copyright__yandex_light'}`}>
           Яндекс.Практикум
-        </p>
-        <p className={`copyright__github ${darkTheme?'':'copyright__github_light'}`}>
+        </Link>
+        <Link to='https://github.com/' target='_blank' className={`copyright__github ${darkTheme?'':'copyright__github_light'}`}>
           Github
-        </p>
+        </Link>
       </div>
     </footer>
   )

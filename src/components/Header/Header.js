@@ -34,7 +34,7 @@ const Header = ({handleChangeTheme}) => {
       <Logo handleChangeTheme={handleChangeTheme} />
       {!loggedIn ? 
         <div className='header__sign sign'>
-        <button className={`sign__button sign__button_registration ${darkTheme?'':'sign__button_registration_light'}`} onClick={() => navigation('/signup')}>
+        <button className={`sign__button sign__button_registration ${darkTheme?'':'sign__button_registration_light'} `} onClick={() => navigation('/signup')}>
           Регистрация 
         </button>
         <button className={`sign__button sign__button_login ${darkTheme?'':'sign__button_login_light'}`} onClick={() => navigation('/signin')}>
@@ -49,7 +49,7 @@ const Header = ({handleChangeTheme}) => {
             <button onClick={() => navigation('/saved-movies')} className={`header__link ${darkTheme?'':'header__link_light'} ${location.pathname === '/saved-movies' ?'header__link_active':''}`}>
               Сохранённые фильмы
             </button>
-            <button className={`header__account ${darkTheme?'':'header__account_light'}`} onClick={() => navigation('/profile')}>
+            <button className={`header__account ${darkTheme?'':'header__account_light'} ${location.pathname === '/' && 'header__account_main'}`} onClick={() => navigation('/profile')}>
               Аккаунт
             </button>
           </>

@@ -1,4 +1,4 @@
-.header__logo{
+.logo{
   background-image: url(../../images/logo.svg);
   border: none;
   cursor: pointer;
@@ -9,10 +9,10 @@
   transition: 300ms ease-in-out;
 }
 
-.header__logo:hover{
+.logo:hover{
   opacity: 0.8;
 }
 
-.header__logo_light{
+.logo_light{
   background-image: url(../../images/logo-light.svg);
 }

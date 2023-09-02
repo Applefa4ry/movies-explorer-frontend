@@ -117,12 +117,17 @@
     width: 255px;
     height: 307px;
   }
+
+  .business-card__github{
+    position: absolute;
+    bottom: 0;
+  }
 }
 
 @media all and (max-width:767px){
-.about-me{
-  margin-bottom: 70px;
-}
+  .about-me{
+    margin-bottom: 70px;
+  }
 
   .section__title_about-me{
     max-width: 292px;
@@ -160,5 +165,9 @@
     font-size: 11px;
     line-height: 16px; /* 145.455% */
     margin-bottom: 39px;
+  }
+
+  .business-card__github{
+    position: static;
   }
 }

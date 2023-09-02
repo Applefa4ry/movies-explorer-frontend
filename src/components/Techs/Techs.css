@@ -1,11 +1,15 @@
 .techs{
   width: 100%;
   background-color: #272727;
-  padding-top: 100px;
+  padding-top: 101px;
   padding-bottom: 100px;
   z-index: 2;
-  margin-bottom: 110px;
+  margin-bottom: 111px;
   left: 0;
+}
+
+.techs .section__title{
+  border-bottom: 1px solid #000;
 }
 
 .techs_light{

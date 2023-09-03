@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://api.explorer-applef4iry.nomoreparties.co';
+export const BASE_URL = 'https://api.explorer-applef4iry.nomoreparties.co';
 
 export const getResponseData = (res) => {
   if (!res.ok) {

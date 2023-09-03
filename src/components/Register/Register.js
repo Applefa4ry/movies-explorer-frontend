@@ -1,9 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import './Register.css'
 import SignForm from '../SignForm/SignForm';
+import * as MainApi from '../../utils/MainApi'
 
-const Register = ({handleChangeTheme}) => {
-  const [hasMistake, setHasMistake] = React.useState(true);
+const Register = ({handleChangeTheme, handleLogin}) => {
+  const [hasMistake, setHasMistake] = React.useState(false);
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = React.useState(false)
   const data = {
     title: 'Добро пожаловать!',
     inputs: [
@@ -18,14 +22,37 @@ const Register = ({handleChangeTheme}) => {
         type: 'email'
       },
     ],
-    button: 'Зарегистрироваться',
+    button: "Зарегистрироваться",
     navTitle: 'Уже зарегистрированы?',
     navTo: '/signin',
     navLink: 'Войти'
   }
+
+  const handleSubmit = (e, formValue, setFormValue) => {
+    e.preventDefault();
+    if(!formValue.email.match(/^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/) || !formValue.name.match(/^[a-zA-Z][a-zA-Z0-9-_.]{2,30}$/) ){
+      throw new Error()
+    }
+    MainApi.register(formValue.name, formValue.email,formValue.password).then((res) => {
+      setIsLoading(true)
+      if(res){
+        handleLogin()
+        setHasMistake(false)
+        navigate('/movies', {replace: true});
+      }
+      setFormValue({name: "", email:"", password:""})
+    })
+    .catch((err) => {
+      setHasMistake(true)
+      console.log(err);
+    })
+    .finally(() => {
+      setIsLoading(false)
+    });
+  }
   return (
     <main className='register'>
-      <SignForm data={data} hasMistake={hasMistake} handleChangeTheme={handleChangeTheme} />
+      <SignForm isLoading={isLoading} onSubmit={handleSubmit} data={data} hasMistake={hasMistake} handleChangeTheme={handleChangeTheme} />
     </main>
   )
 }

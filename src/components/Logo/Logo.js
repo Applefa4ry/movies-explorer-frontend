@@ -14,7 +14,6 @@ const Logo = ({handleChangeTheme}) => {
 
   function handleMouseUp(){
     const endTime = Date.now();
-    console.log(endTime - startTime);
     endTime - startTime > 300 ? handleChangeTheme() : navigation('/');
     setStartTime(endTime);
   }

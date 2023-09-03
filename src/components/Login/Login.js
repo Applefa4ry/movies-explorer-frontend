@@ -28,7 +28,7 @@ const Login = ({handleChangeTheme, handleLogin}) => {
   const handleSubmit = (e, formValue, setFormValue) => {
     e.preventDefault();
     console.log(formValue)
-    if(!formValue.email.match(/^[-\w.]+@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,4}$/)){
+    if(!/^[-\w.]+@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,}$/.test(formValue.email)){
       throw new Error()
     }
     MainApi.authorize(formValue.email,formValue.password).then((res) => {

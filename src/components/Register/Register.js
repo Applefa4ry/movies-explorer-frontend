@@ -31,7 +31,7 @@ const Register = ({handleChangeTheme, handleLogin}) => {
   const handleSubmit = (e, formValue, setFormValue) => {
     e.preventDefault();
     console.log(formValue)
-    if (!/^[-\w.]+@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,}$/.test(formValue.email) || !/^[a-zA-Z][a-zA-Z0-9-_.]{2,30}$/.test(formValue.name)) {
+    if (!/^[-\w.]+@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,}$/.test(formValue.email) || !/^[a-zA-Zа-яА-Я\s-]{2,30}$/.test(formValue.name)) {
       throw new Error();
     }
     MainApi.register(formValue.name, formValue.email,formValue.password).then((res) => {

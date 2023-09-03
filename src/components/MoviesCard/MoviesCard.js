@@ -5,7 +5,7 @@ import './MoviesCard.css'
 
 const MoviesCard = ({film, onFilmLike, onFilmDelete, setFilms, setShortFilms, savedMovies}) => {
   const location = useLocation();
-  const [isLiked, setIsLiked] = React.useState(savedMovies.find(sFilm => sFilm.movieId === film.id));
+  const [isLiked, setIsLiked] = React.useState(savedMovies && savedMovies.find(sFilm => sFilm.movieId === film.id));
   const darkTheme = React.useContext(DarkThemeContext);
   function handleFilmLike(){
     onFilmLike(film).then(res => setIsLiked(res))

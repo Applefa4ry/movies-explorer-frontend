@@ -10,7 +10,6 @@ export const getResponseData = (res) => {
 export const register = (name, email, password) => {
   return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
-    mode: "no-cors",
     headers: {
       'Content-Type': 'application/json'
     },
@@ -28,7 +27,6 @@ export const register = (name, email, password) => {
 export const authorize = (email, password) => {
   return fetch(`${BASE_URL}/signin`, {
     method: 'POST',
-    mode: "no-cors",
     headers: {
       'Content-Type': 'application/json'
     },
@@ -46,7 +44,6 @@ export const authorize = (email, password) => {
 export const checkToken = (token) => {
   return fetch(`${BASE_URL}/users/me`, {
     method: 'GET',
-    mode: "no-cors",
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
@@ -60,7 +57,6 @@ export const checkToken = (token) => {
 export const editProfile = (name, email) => {
   return fetch(`${BASE_URL}/users/me`, {
     method: 'PATCH',
-    mode: "no-cors",
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
@@ -88,7 +84,6 @@ export const onlyShortMovie = (films) => {
 export const getStartFilms = () => {
   return fetch(`${BASE_URL}/movie`, {
     method: 'GET',
-    mode: "no-cors",
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
@@ -105,7 +100,6 @@ export const getStartFilms = () => {
 export const searchFilms = (search) => {
   return fetch(`${BASE_URL}/movie`, {
     method: 'GET',
-    mode: "no-cors",
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
@@ -120,7 +114,6 @@ export const searchFilms = (search) => {
 export const addFilm = ({id, country, director, duration, year, description, image, trailerLink, nameRU, nameEN}) => {
   return fetch(`${BASE_URL}/movie`, {
     method: 'POST',
-    mode: "no-cors",
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
@@ -147,7 +140,6 @@ export const addFilm = ({id, country, director, duration, year, description, ima
 export const deleteFilm = (id) => {
   return fetch(`${BASE_URL}/movie/${id}`, {
     method: 'DELETE',
-    mode: "no-cors",
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',

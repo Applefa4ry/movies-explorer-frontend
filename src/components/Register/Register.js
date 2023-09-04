@@ -4,7 +4,7 @@ import './Register.css'
 import SignForm from '../SignForm/SignForm';
 import * as MainApi from '../../utils/MainApi'
 
-const Register = ({handleChangeTheme, handleLogin}) => {
+const Register = ({handleChangeTheme, handleLogin, setIsPass, setIsOpen}) => {
   const [hasMistake, setHasMistake] = React.useState(false);
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = React.useState(false)
@@ -45,6 +45,8 @@ const Register = ({handleChangeTheme, handleLogin}) => {
       }
     })
     .catch((err) => {
+      setIsPass(false)
+      setIsOpen(true)
       setHasMistake(true)
       console.log(err);
     })

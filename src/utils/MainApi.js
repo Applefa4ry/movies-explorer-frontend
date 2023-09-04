@@ -22,7 +22,6 @@ export const register = (name, email, password) => {
     console.log(res)
     return res;
   })
-  .catch((err) => console.log(err));
 };
 export const authorize = (email, password) => {
   return fetch(`${BASE_URL}/signin`, {
@@ -39,7 +38,6 @@ export const authorize = (email, password) => {
       return data;
     }
   })
-  .catch(err => console.log(err))
 };
 export const checkToken = (token) => {
   return fetch(`${BASE_URL}/users/me`, {
@@ -70,7 +68,6 @@ export const editProfile = (name, email) => {
       return data;
     }
   })
-  .catch(err => console.log(err))
 }
 
 export const filterFilms = (films, name) => {

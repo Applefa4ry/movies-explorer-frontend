@@ -5,7 +5,7 @@ import SignForm from '../SignForm/SignForm';
 import * as MainApi from '../../utils/MainApi'
 
 
-const Login = ({handleChangeTheme, handleLogin}) => {
+const Login = ({handleChangeTheme, handleLogin, setIsPass, setIsOpen}) => {
   const [hasMistake, setHasMistake] = React.useState(false);
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = React.useState(false)
@@ -41,6 +41,8 @@ const Login = ({handleChangeTheme, handleLogin}) => {
       }
     })
     .catch((err) => {
+      setIsPass(false)
+      setIsOpen(true)
       setHasMistake(true)
       console.log(err);
     })

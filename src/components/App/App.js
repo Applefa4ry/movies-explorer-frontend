@@ -12,7 +12,7 @@ import Footer from '../Footer/Footer';
 import './App.css'
 import PageNotFound from '../PageNotFound/PageNotFound';
 import { CurrentUserContext } from '../../context/CurrentUserContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import * as MainApi from '../../utils/MainApi'
 import ProtectedRouteElement from '../ProtectedRoute/ProtectedRoute';
 
@@ -91,7 +91,7 @@ const App = () => {
             } />} />
             <Route path="/signin" element={<Login handleChangeTheme={handleChangeTheme} handleLogin={handleLogin} />} />
             <Route path="/signup" element={<Register handleChangeTheme={handleChangeTheme} handleLogin={handleLogin} />} />
-            <Route path="/*" element={<PageNotFound />} />
+            <Route path="/*" element={loggedIn ? <Navigate to='/movies' replace /> :<PageNotFound />} />
           </Routes>
         </div>
       </CurrentUserContext.Provider>

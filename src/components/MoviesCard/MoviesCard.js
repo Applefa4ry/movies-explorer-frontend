@@ -7,11 +7,13 @@ const MoviesCard = ({film, onFilmLike, onFilmDelete, setFilms, setShortFilms, sa
   const location = useLocation();
   const [isLiked, setIsLiked] = React.useState(savedMovies && savedMovies.find(sFilm => sFilm.movieId === film.id));
   const darkTheme = React.useContext(DarkThemeContext);
-  function handleFilmLike(){
+  function handleFilmLike(e){
+    e.preventDefault()
     onFilmLike(film).then(res => setIsLiked(res))
   }
   
-  function handleFilmDelete(){
+  function handleFilmDelete(e){
+    e.preventDefault()
     onFilmDelete(film.id ? film.id : film, setFilms, setShortFilms)
   }
 

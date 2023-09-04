@@ -37,11 +37,11 @@ const Register = ({handleChangeTheme, handleLogin}) => {
     MainApi.register(formValue.name, formValue.email,formValue.password).then((res) => {
       setIsLoading(true)
       if(res){
-        handleLogin()
-        setHasMistake(false)
+        handleLogin();
+        setHasMistake(false);
+        setFormValue({name: "", email:"", password:""})
         navigate('/movies', {replace: true});
       }
-      setFormValue({name: "", email:"", password:""})
     })
     .catch((err) => {
       setHasMistake(true)

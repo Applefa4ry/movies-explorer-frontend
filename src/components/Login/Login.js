@@ -36,9 +36,9 @@ const Login = ({handleChangeTheme, handleLogin}) => {
       if(res){
         handleLogin();
         setHasMistake(false)
+        setFormValue({email:"", password:""})
         navigate('/movies', {replace: true});
       }
-      setFormValue({email:"", password:""})
     })
     .catch((err) => {
       setHasMistake(true)

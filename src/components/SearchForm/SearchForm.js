@@ -1,13 +1,15 @@
 import React from 'react'
 import { DarkThemeContext } from '../../context/DarkThemeContext'
+import { useLocation } from 'react-router-dom'
 import './SearchForm.css'
 
 const SearchForm = ({setShortFilms, setFilms, activeCheckbox, setActiveCheckbox, handleSubmit}) => {
   const darkTheme = React.useContext(DarkThemeContext);
+  const location = useLocation()
 
   return (
     <form onSubmit={handleSubmit} className={`search-form ${darkTheme?'':'search-form_light'}`}>
-      <input defaultValue={localStorage.getItem('lastSearch')} className={`search-form__input ${darkTheme?'':'search-form__input_light'}`} placeholder='Фильм' />
+      <input defaultValue={location.pathname === '/movies' ? localStorage.getItem('lastSearch') : ''} className={`search-form__input ${darkTheme?'':'search-form__input_light'}`} placeholder='Фильм' />
       <button className={`search-form__submit ${darkTheme?'':'search-form__submit_light'}`} type='submit' />
       <input onChange={() => {
         activeCheckbox ? setActiveCheckbox(false) : setActiveCheckbox(true);

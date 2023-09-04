@@ -35,7 +35,6 @@ const SavedMovies = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    localStorage.setItem('lastSearch', event.target[0].value)
     MainApi.searchFilms(event.target[0].value)
       .then(films => {
         setFilms(films)

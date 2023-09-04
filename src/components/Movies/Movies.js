@@ -34,7 +34,7 @@ const Movies = () => {
     MoviesApi.getStartFilms()
       .then(films => {
         setFilms(films)
-        setShortFilms(MoviesApi.onlyShortMovie(films, localStorage.getItem('onlyShortFilms') === 'true'))
+        setShortFilms(MoviesApi.onlyShortMovie(films, true))
         setServerError(false)
       })
       .catch(() => setServerError(true))
@@ -76,12 +76,12 @@ const Movies = () => {
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    localStorage.setItem('lastSearch', event.target[0].value)
-    MoviesApi.searchFilms(event.target[0].value)
+    event.target[0] && event.preventDefault();
+    localStorage.setItem('lastSearch', event.target[0] ? event.target[0].value : event.target.form[0].value)
+    MoviesApi.searchFilms(event.target[0] ? event.target[0].value : event.target.form[0].value)
       .then(films => {
         setFilms(films)
-        setShortFilms(MoviesApi.onlyShortMovie(films, activeCheckbox))
+        setShortFilms(MoviesApi.onlyShortMovie(films, true))
       })
   }
 

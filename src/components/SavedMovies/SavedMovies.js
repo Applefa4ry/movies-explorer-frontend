@@ -10,13 +10,13 @@ const SavedMovies = () => {
   const [films, setFilms] = React.useState([]);
   const [shortFilms, setShortFilms] = React.useState([]);
   const [activeFilms, setActiveFilms] = React.useState([]);
-  const [activeCheckbox, setActiveCheckbox] = React.useState(localStorage.getItem('onlyShortFilms') === 'true' ? true : false);
+  const [activeCheckbox, setActiveCheckbox] = React.useState(false);
 
   React.useEffect(() => {
     MainApi.getStartFilms()
       .then(films => {
         setFilms(films)
-        setShortFilms(MainApi.onlyShortMovie(films, localStorage.getItem('onlyShortFilms') === 'true'))
+        setShortFilms(MainApi.onlyShortMovie(films, true))
         setServerError(false)
       })
       .catch(() => setServerError(true))
@@ -34,11 +34,11 @@ const SavedMovies = () => {
   }, [films, activeCheckbox, shortFilms]);
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    MainApi.searchFilms(event.target[0].value)
+    event.target[0] && event.preventDefault();
+    MainApi.searchFilms(event.target[0] ? event.target[0].value : event.target.form[0].value)
       .then(films => {
         setFilms(films)
-        setShortFilms(MainApi.onlyShortMovie(films, activeCheckbox))
+        setShortFilms(MainApi.onlyShortMovie(films, true))
       })
   }
 

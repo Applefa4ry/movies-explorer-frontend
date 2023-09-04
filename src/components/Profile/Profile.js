@@ -12,6 +12,14 @@ const Profile = ({handleLogOut, currentUser, setCurrentUser}) => {
     password: ''
   })
 
+  React.useEffect(() => {
+    setFormValue({
+      name: currentUser.name,
+      email: currentUser.email,
+      password: ''
+    })
+  }, [currentUser]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     MainApi.editProfile(formValue.name, formValue.email)

@@ -37,7 +37,8 @@ const Register = ({handleChangeTheme, handleLogin}) => {
     MainApi.register(formValue.name, formValue.email,formValue.password).then((res) => {
       setIsLoading(true)
       if(res){
-        handleLogin();
+        MainApi.authorize(formValue.email,formValue.password)
+          .then(() => handleLogin());
         setHasMistake(false);
         setFormValue({name: "", email:"", password:""})
         navigate('/movies', {replace: true});

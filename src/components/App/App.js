@@ -20,7 +20,7 @@ const App = () => {
   //const hour = new Date().toUTCString().split(" ")[4].split(":")[0];
   const [darkTheme, setDarkTheme] = React.useState(true);
   const [currentUser, setCurrentUser] = React.useState({});
-  const [loggedIn, setLoggedIn] = React.useState(false);
+  const [loggedIn, setLoggedIn] = React.useState(localStorage.getItem('jwt') ? true : false);
   const navigate = useNavigate();
 
   function handleChangeTheme(){
@@ -38,14 +38,19 @@ const App = () => {
         if (res){
           setCurrentUser(res)
           setLoggedIn(true);
-          navigate("/movies", {replace: true})
         }
+      })
+      .catch(err => {
+        setLoggedIn(false);
+        navigate('/');
+        console.log(err)
       });
     }
   }
 
   const handleLogin = () => {
     handleTokenCheck();
+    navigate("/movies", {replace: true})
     setLoggedIn(true);
   }
 
@@ -89,8 +94,8 @@ const App = () => {
                 <Profile currentUser={currentUser} setCurrentUser={setCurrentUser} handleLogOut={handleLogOut} />
               </>
             } />} />
-            <Route path="/signin" element={<Login handleChangeTheme={handleChangeTheme} handleLogin={handleLogin} />} />
-            <Route path="/signup" element={<Register handleChangeTheme={handleChangeTheme} handleLogin={handleLogin} />} />
+            <Route path="/signin" element={loggedIn ? <Navigate to='/' replace /> : <Login handleChangeTheme={handleChangeTheme} handleLogin={handleLogin} />} />
+            <Route path="/signup" element={loggedIn ? <Navigate to='/' replace /> : <Register handleChangeTheme={handleChangeTheme} handleLogin={handleLogin} />} />
             <Route path="/*" element={loggedIn ? <Navigate to='/movies' replace /> :<PageNotFound />} />
           </Routes>
         </div>

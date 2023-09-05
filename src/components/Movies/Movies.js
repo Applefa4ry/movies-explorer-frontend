@@ -3,6 +3,7 @@ import SearchForm from '../SearchForm/SearchForm'
 import Preloader from '../Preloader/Preloader'
 import MoviesCardList from '../MoviesCardList/MoviesCardList'
 import { DarkThemeContext } from '../../context/DarkThemeContext'
+import { startDesktopFilms, startTabletFilms, startMobileFilms, moreDesktopFilms, moreTabletOrMobileFilms } from '../../constants/constants'
 import * as MoviesApi from '../../utils/MoviesApi'
 import * as MainApi from '../../utils/MainApi'
 import './Movies.css'
@@ -48,13 +49,13 @@ const Movies = () => {
 
   React.useEffect(() => {
     if(!activeCheckbox){
-      setActiveFilms(films.slice(0,12));
-      width <= 1279 && setActiveFilms(films.slice(0,8));
-      width <= 767  && setActiveFilms(films.slice(0,5));
+      setActiveFilms(films.slice(0,startDesktopFilms));
+      width <= 1279 && setActiveFilms(films.slice(0,startTabletFilms));
+      width <= 767  && setActiveFilms(films.slice(0,startMobileFilms));
     } else{
-      setActiveFilms(shortFilms.slice(0,12));
-      width <= 1279 && setActiveFilms(shortFilms.slice(0,8));
-      width <= 767  && setActiveFilms(shortFilms.slice(0,5));
+      setActiveFilms(shortFilms.slice(0,startDesktopFilms));
+      width <= 1279 && setActiveFilms(shortFilms.slice(0,startTabletFilms));
+      width <= 767  && setActiveFilms(shortFilms.slice(0,startMobileFilms));
     }
   }, [films, activeCheckbox]);
 
@@ -68,9 +69,9 @@ const Movies = () => {
 
   const showMoreFilms = () => {
     if(!activeCheckbox){
-      width >= 1280 ? setActiveFilms(films.slice(0, activeFilms.length + 3)) : setActiveFilms(films.slice(0, activeFilms.length + 2));
+      width >= 1280 ? setActiveFilms(films.slice(0, activeFilms.length + moreDesktopFilms)) : setActiveFilms(films.slice(0, activeFilms.length + moreTabletOrMobileFilms));
     } else{
-      width >= 1280 ? setActiveFilms(shortFilms.slice(0, activeFilms.length + 3)) : setActiveFilms(shortFilms.slice(0, activeFilms.length + 2));
+      width >= 1280 ? setActiveFilms(shortFilms.slice(0, activeFilms.length + moreDesktopFilms)) : setActiveFilms(shortFilms.slice(0, activeFilms.length + moreTabletOrMobileFilms));
     }
     setIsLoading(false);
   }

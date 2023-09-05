@@ -2,36 +2,18 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import './Register.css'
 import SignForm from '../SignForm/SignForm';
+import { registerCfg as data, emailRegex, nameRegex } from '../../constants/constants';
 import * as MainApi from '../../utils/MainApi'
 
 const Register = ({handleChangeTheme, handleLogin, setIsPass, setIsOpen}) => {
   const [hasMistake, setHasMistake] = React.useState(false);
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = React.useState(false)
-  const data = {
-    title: 'Добро пожаловать!',
-    inputs: [
-      {
-        name: 'Имя',
-        for: 'name',
-        type: 'text'
-      },
-      {
-        name: 'E-mail',
-        for: 'email',
-        type: 'email'
-      },
-    ],
-    button: "Зарегистрироваться",
-    navTitle: 'Уже зарегистрированы?',
-    navTo: '/signin',
-    navLink: 'Войти'
-  }
 
   const handleSubmit = (e, formValue, setFormValue) => {
     e.preventDefault();
     console.log(formValue)
-    if (!/^[-\w.]+@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,}$/.test(formValue.email) || !/^[a-zA-Zа-яА-Я\s-]{2,30}$/.test(formValue.name)) {
+    if (!emailRegex.test(formValue.email) || !nameRegex.test(formValue.name)) {
       throw new Error();
     }
     MainApi.register(formValue.name, formValue.email,formValue.password).then((res) => {

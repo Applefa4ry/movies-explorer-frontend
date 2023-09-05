@@ -14,7 +14,9 @@ const SearchForm = ({setShortFilms, setFilms, activeCheckbox, setActiveCheckbox,
       <button className={`search-form__submit ${darkTheme?'':'search-form__submit_light'}`} type='submit' />
       <input onChange={(e) => {
         activeCheckbox ? setActiveCheckbox(false) : setActiveCheckbox(true);
-        activeCheckbox ? localStorage.setItem('onlyShortFilms', false) : localStorage.setItem('onlyShortFilms', true);
+        if(location.pathname === '/movies'){
+          activeCheckbox ? localStorage.setItem('onlyShortFilms', false) : localStorage.setItem('onlyShortFilms', true);
+        }
         handleSubmit(e);
       }} defaultChecked={activeCheckbox} className={`search-form__checkbox ${darkTheme?'':'search-form__checkbox_light'}`} id='short-films' type='checkbox' />
       <label htmlFor='short-films' className={`search-form__label ${darkTheme?'':'search-form__label_light'}`}>Короткометражки</label>

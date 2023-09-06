@@ -1,24 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { DarkThemeContext } from '../../context/DarkThemeContext'
+import { projects } from '../../constants/constants'
 import './Portfolio.css'
 
 const Portfolio = () => {
   const darkTheme = React.useContext(DarkThemeContext);
-  const projects = [
-    {
-      type: 'Статичный сайт',
-      link: 'https://applefa4ry.github.io/how-to-learn/'
-    },
-    {
-      type: 'Адаптивный сайт',
-      link: 'https://applefa4ry.github.io/russian-travel/'
-    },
-    {
-      type: 'Одностраничное приложение',
-      link: 'https://applefa4ry.github.io/react-mesto-auth'
-    },
-  ]
   return (
     <section className='portfolio'>
       <h2 className={`portfolio__title ${darkTheme?'':'portfolio__title_light'}`}>

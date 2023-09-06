@@ -1,40 +1,16 @@
 import React from 'react'
-import card1 from '../../images/card1.png'
-import card2 from '../../images/card2.png'
 import MoviesCard from '../MoviesCard/MoviesCard'
+import { DarkThemeContext } from '../../context/DarkThemeContext'
 import './MoviesCardList.css'
 
-const MoviesCardList = () => {
-  const CardData = [
-    {
-      nameRU: '33 слова о дизайне',
-      duration: 107,
-      image: card1
-    },
-    {
-      nameRU: 'Киноальманах «100 лет дизайна»',
-      duration: 63,
-      image: card2
-    },
-    {
-      nameRU: '33 слова о дизайне',
-      duration: 107,
-      image: card1
-    },
-    {
-      nameRU: 'Киноальманах «100 лет дизайна»',
-      duration: 63,
-      image: card2
-    },
-    {
-      nameRU: '33 слова о дизайне',
-      duration: 107,
-      image: card1
-    },
-]
+const MoviesCardList = ({films, serverError, handleFilmLike, handleFilmDelete, setFilms, setShortFilms, savedMovies}) => {
+  const darkTheme = React.useContext(DarkThemeContext)
   return (
-    <section className='cards'>
-      {CardData.map((data, i) => <MoviesCard key={i} data={data} />)}
+    <section className={`cards ${!(films.length > 0) && `cards_error`}`}>
+      {films && films.length > 0 ? films.map((film) => <MoviesCard savedMovies={savedMovies} setFilms={setFilms} setShortFilms={setShortFilms} onFilmLike={handleFilmLike} onFilmDelete={handleFilmDelete} key={film.id ? film.id : film.moveId} film={film} />) : 
+        <p className={`cards__error ${darkTheme || 'cards__error_light'}`}>{serverError ?'Во время запроса произошла ошибка.\nВозможно, проблема с соединением или сервер недоступен.\nПодождите немного и попробуйте ещё раз':
+          'Ничего не найдено'}
+        </p>}
     </section>
   )
 }

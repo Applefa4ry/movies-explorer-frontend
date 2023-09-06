@@ -5,11 +5,10 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 import Logo from '../Logo/Logo';
 
-const Header = ({handleChangeTheme}) => {
+const Header = ({handleChangeTheme, loggedIn}) => {
   const darkTheme = React.useContext(DarkThemeContext);
   const navigation = useNavigate();
   const location = useLocation();
-  const loggedIn = true;
   const [width, setWidth] = React.useState(window.innerWidth);
   const [isDesktop, setIsDesktop] = React.useState(true);
 

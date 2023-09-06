@@ -29,3 +29,19 @@
     margin-bottom: 77px;
   }
 }
+
+.cards_error{
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.cards__error{
+  margin: auto;
+  max-width: 40%;
+  text-align: center;
+}
+
+.cards__error_light{
+  color: #000;
+}

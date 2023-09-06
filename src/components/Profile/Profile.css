@@ -22,11 +22,13 @@
 .profile__about{
   display: grid;
   width: 410px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 3fr;
   margin-bottom: 199px;
+  row-gap: 10px;
 }
 
 .about__path{
+  display: block;
   color: #FFF;
   font-size: 11px;
   font-style: normal;
@@ -35,6 +37,9 @@
   padding-bottom: 16px;
   margin-bottom: 5px;
   border-bottom-color: #424242;
+  background: none;
+  border: none;
+  outline: none;
 }
 
 .about__path_light{
@@ -119,3 +124,11 @@
   }
 }
 
+.profile__edit-button_disabled{
+  opacity: 0.5;
+  cursor: auto;
+}
+
+.profile__edit-button_disabled:hover{
+  opacity: 0.5;
+}
